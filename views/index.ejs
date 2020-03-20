@@ -1,0 +1,50 @@
+<%-include('partials/header.ejs') %>
+
+<div class="ui main text container">
+  <div class="ui huge header">RESTful Blog App</div>
+  <div class="ui top attched segment">
+    <div class="ui divided items">
+      <%blogs.forEach(function(blog){%>
+      <div class="item">
+        <span class="image">
+          <img src="<%=blog.image%>">
+        </span>
+      </div>
+      <div class="content">
+        <a class="header" href="/blogs/<%=blog._id%>"><%=blog.title%></a>
+        <div class="meta">
+          <span><%=blog.created.toDateString()%></span>
+        </div>
+        <div class="description">
+          <p><%=blog.body.substring(0, 100)%>...</p>
+        </div>
+        <div class="extra">
+          <a class="ui floated basic violet button" href="/blogs/<%=blog._id%>">
+            Read More
+            <i class="right chevron icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <%});%>
+
+    </div>
+  </div>
+</div>
+
+
+<%-include('partials/footer.ejs')%>
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum -->.
